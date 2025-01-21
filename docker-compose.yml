@@ -51,6 +51,22 @@ services:
     env_file:
       - .env
 
+  celery-beat:
+    build: .
+    stdin_open: true
+    tty: true
+    command: celery -A config beat -l info
+    restart: on-failure
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+      - app
+      - redis
+      - celery
+    env_file:
+      - .env
+
 volumes:
   postgres_data:
 
