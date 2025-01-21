@@ -44,6 +44,7 @@ class User(AbstractUser):
         return self.email
 
 
+
 class Payment(models.Model):
     CASH = "Cash"
     TRANSFER = "Transfer"
