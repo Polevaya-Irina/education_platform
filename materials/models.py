@@ -40,6 +40,7 @@ class Course(models.Model):
 
 
 class Lesson(models.Model):
+
     name = models.CharField(
         max_length=100,
         verbose_name="Название урока",
